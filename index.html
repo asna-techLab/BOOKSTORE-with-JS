@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookStore</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome for icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-book-open"></i>
+            BookStore
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#inventory">Inventory</a>
+            <a href="#bestsellers">Best Sellers</a>
+        </nav>
+
+        <!-- Search -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search books..."
+            >
+
+            <button id="searchBtn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <!-- Cart -->
+        <button class="cart-btn" id="cartBtn">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Cart
+            <span id="cartCount">0</span>
+        </button>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">WELCOME TO BOOKSTORE</p>
+
+            <h1>
+                Find Your Next
+                <span>Favorite Book</span>
+            </h1>
+
+            <p>
+                Discover thousands of amazing stories,
+                classic literature and modern best sellers.
+            </p>
+
+            <a href="" class="hero-btn">
+                Browse Books
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BEST SELLERS ================= -->
+
+    <section class="section" id="bestsellers">
+
+        <div class="section-header">
+
+            <div>
+                <p class="section-label">POPULAR</p>
+                <h2>Best Sellers</h2>
+            </div>
+
+            <a href="#inventory" class="view-all">
+                View All
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="book-grid">
+
+            <!-- Book 1 -->
+
+            <article class="book-card">
+
+                <div class="book-image">
+                    <div class="book-cover cover-one">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_ZiL2SNF7p9U23rmmvqvATgG2Wx3xmMom1XYd76dxeg&s=10.jpg" alt="image">
+                    </div>
+                </div>
+
+                <div class="book-info">
+
+                    <h3>The Hobbit</h3>
+
+                    <p class="author">
+                        J.R.R. Tolkien
+                    </p>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>4.8</span>
+                    </div>
+
+                    <div class="book-bottom">
+
+                        <strong>Rs 550</strong>
+
+                        <button
+                            class="add-cart"
+                            data-id="1"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Book 2 -->
+
+            <article class="book-card">
+
+                <div class="book-image">
+                    <div class="book-cover cover-two">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEW4HzHi1JjigA94nxoHcMM_yV-U1Ozr68iTdMcHFumQ&s=10.jpg" alt="image"> 
+                    </div>
+                </div>
+
+                <div class="book-info">
+
+                    <h3>1984</h3>
+
+                    <p class="author">
+                        George Orwell
+                    </p>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>4.6</span>
+                    </div>
+
+                    <div class="book-bottom">
+
+                        <strong>Rs 400</strong>
+
+                        <button
+                            class="add-cart"
+                            data-id="2"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Book 3 -->
+
+            <article class="book-card">
+
+                <div class="book-image">
+                    <div class="book-cover cover-three">
+                        <img src="https://m.media-amazon.com/images/M/MV5BZTlkYWU4MGEtZmQyYi00OWEzLTgzY2EtYzVjOTEzYzAyNTk1XkEyXkFqcGc@._V1_.jpg.jpg" alt="image">
+                    </div>
+                </div>
+
+                <div class="book-info">
+
+                    <h3>To Kill a Mockingbird</h3>
+
+                    <p class="author">
+                        Harper Lee
+                    </p>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>4.9</span>
+                    </div>
+
+                    <div class="book-bottom">
+
+                        <strong>Rs 650</strong>
+
+                        <button
+                            class="add-cart"
+                            data-id="3"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Book 4 -->
+
+            <article class="book-card">
+
+                <div class="book-image">
+                    <div class="book-cover cover-four">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVsjrWbriIIDcLMH9CHQqJWMSV_F5yXxqXv0vbhCEO4A&s=10.jpg" alt="image">
+                    </div>
+                </div>
+
+                <div class="book-info">
+
+                    <h3>The Great Gatsby</h3>
+
+                    <p class="author">
+                        F. Scott Fitzgerald
+                    </p>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>4.5</span>
+                    </div>
+
+                    <div class="book-bottom">
+
+                        <strong>Rs 500</strong>
+
+                        <button
+                            class="add-cart"
+                            data-id="4"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Book 5 -->
+
+            <article class="book-card">
+
+                <div class="book-image">
+                    <div class="book-cover cover-five">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKa-K7D5lehZsEIoTrOTCy924VhzsbQz9Xnf3XXqozrA&s=10.jpg" alt="image">
+                    </div>
+                </div>
+
+                <div class="book-info">
+
+                    <h3>Pride and Prejudice</h3>
+
+                    <p class="author">
+                        Jane Austen
+                    </p>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>4.7</span>
+                    </div>
+
+                    <div class="book-bottom">
+
+                        <strong>Rs 450</strong>
+
+                        <button
+                            class="add-cart"
+                            data-id="5"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= INVENTORY ================= -->
+
+    <section class="inventory section" id="inventory">
+
+        <div class="section-header">
+
+            <div>
+                <p class="section-label">BOOKSTORE</p>
+                <h2>Inventory</h2>
+            </div>
+
+            <span class="inventory-count">
+                5 Books Available
+            </span>
+
+        </div>
+
+
+        <!-- JavaScript will generate books here -->
+
+        <div
+            class="book-grid"
+            id="bookList"
+        >
+
+            <!-- Books will be displayed by JavaScript -->
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CART ================= -->
+
+    <aside class="cart-panel" id="cartPanel">
+
+        <div class="cart-header">
+
+            <h2>
+                <i class="fa-solid fa-cart-shopping"></i>
+                Your Cart
+            </h2>
+
+            <button id="closeCart">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div
+            class="cart-items"
+            id="cartItems"
+        >
+
+            <p class="empty-cart">
+                Your cart is empty.
+            </p>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="total">
+
+                <span>Total</span>
+
+                <strong id="cartTotal">
+                    $0.00
+                </strong>
+
+            </div>
+
+            <button class="checkout-btn">
+                Checkout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <h2>
+                    <i class="fa-solid fa-book-open"></i>
+                    BookStore
+                </h2>
+
+                <p>
+                    Your place to discover
+                    great books and great stories.
+                </p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+
+                <a href="#home">Home</a>
+                <a href="#inventory">Inventory</a>
+                <a href="#bestsellers">Best Sellers</a>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+
+                <p>Email: hello@bookstore.com</p>
+                <p>Phone: +92 300 1234567</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 BookStore. All Rights Reserved.
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
