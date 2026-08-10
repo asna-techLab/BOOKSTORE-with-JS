@@ -1,9 +1,6 @@
-// ============================================
-// 1. DEMO BOOK INVENTORY
-// ============================================
 
-// This is an array of book objects.
-// Each object represents one book.
+// 1. DEMO BOOK INVENTORY
+
 
 const demoBooks = [
 
@@ -59,9 +56,9 @@ const demoBooks = [
 
 ];
 
-// ============================================
-// 2. BOOKSTORE CLASS
-// ============================================
+
+// 2. BOOKSTORE CLASS 
+
 
 class BookStore {
 
@@ -79,10 +76,8 @@ class BookStore {
 
     }
 
-
-    // ----------------------------------------
     // Search books
-    // ----------------------------------------
+   
 
     searchBook(query) {
 
@@ -96,7 +91,7 @@ class BookStore {
         }
 
         // filter() creates a new array
-        // containing matching books
+       
 
         return this.books.filter(book => {
 
@@ -111,9 +106,8 @@ class BookStore {
     }
 
 
-    // ----------------------------------------
     // Find a book by ID
-    // ----------------------------------------
+    
 
     getBook(bookId) {
 
@@ -124,9 +118,8 @@ class BookStore {
     }
 
 
-    // ----------------------------------------
     // Add book to cart
-    // ----------------------------------------
+    
 
     addToCart(bookId) {
 
@@ -178,9 +171,9 @@ class BookStore {
     }
 
 
-    // ----------------------------------------
+
     // Remove book completely from cart
-    // ----------------------------------------
+
 
     removeFromCart(bookId) {
 
@@ -209,9 +202,9 @@ class BookStore {
     }
 
 
-    // ----------------------------------------
+   
     // Increase quantity
-    // ----------------------------------------
+   
 
     increaseQuantity(bookId) {
 
@@ -237,18 +230,14 @@ class BookStore {
         }
 
 
-        // Increase quantity
+        
         cartItem.quantity++;
 
-        // Reduce stock
+       
         book.stock--;
 
     }
 
-
-    // ----------------------------------------
-    // Decrease quantity
-    // ----------------------------------------
 
     decreaseQuantity(bookId) {
 
@@ -264,16 +253,11 @@ class BookStore {
         }
 
 
-        // Return one book to inventory
         book.stock++;
 
 
-        // Decrease quantity
         cartItem.quantity--;
 
-
-        // If quantity becomes zero
-        // remove item from cart
         if (cartItem.quantity <= 0) {
 
             this.cart = this.cart.filter(item => {
@@ -285,10 +269,6 @@ class BookStore {
     }
 
 
-    // ----------------------------------------
-    // Get total quantity in cart
-    // ----------------------------------------
-
     getCartCount() {
 
         return this.cart.reduce(
@@ -299,9 +279,7 @@ class BookStore {
     }
 
 
-    // ----------------------------------------
-    // Calculate total price
-    // ----------------------------------------
+    
 
     getTotal() {
 
@@ -318,32 +296,22 @@ class BookStore {
     }
 
 
-    // ----------------------------------------
-    // Get best sellers
-    // ----------------------------------------
-
     getBestSellers(limit = 5) {
 
-        // [...this.books] creates a copy
-        // so the original array isn't changed
+        
 
         return [...this.books]
 
-            // Sort highest rating first
             .sort((a, b) => {
                 return b.rating - a.rating;
             })
 
-            // Get first 5 books
             .slice(0, limit);
 
     }
 
 }
 
-// ============================================
-// 3. CREATE BOOKSTORE OBJECT
-// ============================================
 
 const store = new BookStore(demoBooks);
 
@@ -498,9 +466,9 @@ class UI {
     }
 
 
-    // ========================================
+
     // SEARCH
-    // ========================================
+
 
     handleSearch(event) {
 
@@ -526,10 +494,9 @@ class UI {
     }
 
 
-    // ========================================
+    
     // RENDER INVENTORY
-    // ========================================
-
+    
     renderInventory(books = this.store.books) {
 
         // Update inventory count
@@ -626,9 +593,9 @@ class UI {
     }
 
 
-    // ========================================
+    
     // HANDLE BOOK BUTTON
-    // ========================================
+
 
     handleBookClick(event) {
 
@@ -680,9 +647,8 @@ class UI {
     }
 
 
-    // ========================================
     // RENDER BEST SELLERS
-    // ========================================
+  
 
     renderBestSellers() {
 
@@ -754,9 +720,7 @@ class UI {
     }
 
 
-    // ========================================
     // HANDLE CART BUTTONS
-    // ========================================
 
     handleCartClick(event) {
 
@@ -819,9 +783,9 @@ class UI {
     }
 
 
-    // ========================================
+    
     // RENDER CART
-    // ========================================
+   
 
     renderCart() {
 
@@ -916,10 +880,6 @@ class UI {
     }
 
 }
-
-// ============================================
-// 5. START APPLICATION
-// ============================================
 
 // Create UI object
 const ui = new UI(store);
