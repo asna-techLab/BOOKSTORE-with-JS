@@ -76,6 +76,10 @@ class BookStore {
 
     }
 
+    addBook(book) {
+    this.books.push(book);
+}
+
     // Search books
    
 
@@ -328,6 +332,15 @@ class UI {
         // Save BookStore object
         this.store = store;
 
+        this.addBookBtn =
+    document.getElementById("addBookBtn");
+
+this.saveBookBtn =
+    document.getElementById("saveBookBtn");
+
+this.addBookForm =
+    document.getElementById("addBookForm");
+
 
         // ------------------------------------
         // Get HTML elements
@@ -462,6 +475,24 @@ class UI {
             "click",
             this.handleCartClick
         );
+
+        this.addBookBtn.addEventListener("click", () => {
+
+    this.addBookForm.classList.toggle("active");
+
+    this.addBookForm.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+}); 
+
+this.saveBookBtn.addEventListener(
+    "click",
+    () => {
+        this.addNewBook();
+    }
+);
 
     }
 
@@ -878,6 +909,39 @@ class UI {
             `Rs.${this.store.getTotal().toFixed(2)}`;
 
     }
+
+    addNewBook() {
+
+    const newBook = {
+        id: this.store.books.length + 1,
+
+        title:
+            document.getElementById("bookTitle").value,
+
+        author:
+            document.getElementById("bookAuthor").value,
+
+        price:
+            Number(document.getElementById("bookPrice").value),
+
+        rating:
+            Number(document.getElementById("bookRating").value),
+
+        stock:
+            Number(document.getElementById("bookStock").value),
+
+        image:
+            document.getElementById("bookImage").value
+    };
+
+    this.store.addBook(newBook);
+
+    this.renderInventory();
+
+    this.renderBestSellers();
+
+    this.addBookForm.classList.remove("active");
+}
 
 }
 
