@@ -859,7 +859,6 @@ footer {
     border-radius: 5px;
     cursor: pointer;
 }
-
 #addBookBtn:hover {
     background: #b45309;
     transform: translateY(-2px);
