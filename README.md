@@ -2,7 +2,7 @@
 
 A simple and interactive **BookStore web application** built using **HTML, CSS, and JavaScript**. The project demonstrates JavaScript DOM manipulation, Object-Oriented Programming (OOP), event handling, dynamic HTML generation, and shopping cart functionality.
 
-## 🚀 Features
+##  Features
 
 * 📖 Display books dynamically
 * 🔍 Search books by title or author
